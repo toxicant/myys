@@ -1,0 +1,172 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/index/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/mall/mall",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/news/news",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/mall/goods_detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/news/news_detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_wallet",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_wallet1",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/cashOut",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_device",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_order",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_market",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/my_income",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/market_detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false,
+					"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+			"color": "#7A7E83",
+			"selectedColor": "#1BE99F",
+			// "borderStyle": "black",
+			"backgroundColor": "#070312",
+			"height": "60px",
+			"fontSize": "10px",
+			"iconWidth": "24px",
+			"spacing": "3px",
+			"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/index_active.png",
+				"text": "首页"
+			}, 
+			{
+				"pagePath": "pages/mall/mall",
+				"iconPath": "static/tabbar/market.png",
+				"selectedIconPath": "static/tabbar/market_active.png",
+				"text": "商城"
+			},
+			{
+				"pagePath": "pages/news/news",
+				"iconPath": "static/tabbar/news.png",
+				"selectedIconPath": "static/tabbar/news_active.png",
+				"text": "资讯"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"iconPath": "static/tabbar/my.png",
+				"selectedIconPath": "static/tabbar/my_active.png",
+				"text": "我的"
+			}
+			]
+		},
+	"uniIdRouter": {}
+}
