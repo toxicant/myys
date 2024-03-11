@@ -41,9 +41,6 @@
 			this.login()
 		},
 		methods: {
-			test() {
-				console.log(213123)
-			},
 			async login() {
 				//授权
 				var Web3 = require("web3");
@@ -77,27 +74,28 @@
 				// });
 				web3.eth.personal.sign(myAccount, myAccount, "").then((res) => {
 					if (res) {
-						// console.log(myAccount, typeof myAccount, 1);
+						console.log(myAccount, typeof myAccount, 1);
 						this.useraddress = myAccount;
 						uni.setStorageSync("account", this.useraddress);
 
 						//注册 or 登录
-						// await this.user_login(this.useraddress)
+						this.user_login(this.useraddress)
 
-						location.reload();
+						// location.reload();
 					}
 				});
 				return;
 			},
-			async user_login(address) {
+			user_login(address) {
 				this.$http('api/user/address_login', {
 					address: address,
 				}, {}, "POST").then(res => {
+					console.log(res)
 					uni.setStorageSync("token", res.userinfo.token)
 					uni.setStorageSync("userinfo", res.userinfo)
-					uni.switchTab({
-						url: "/pages/my/index"
-					})
+					// uni.switchTab({
+					// 	url: "/pages/my/index"
+					// })
 				})
 			}
 		}

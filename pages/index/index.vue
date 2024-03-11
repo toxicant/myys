@@ -137,7 +137,6 @@
 			getBanner() {
 				this.$http('api/index/banner').then(res => {
 					this.banner = res.list[0].image
-					console.log(res)
 				})
 			},
 			getLive() {

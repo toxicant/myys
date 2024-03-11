@@ -9,7 +9,7 @@
 					我的
 				</view>
 				<view class="id1">
-					{{useraddress.substring(0, 5) + "*****" + useraddress.substring(0, 5)}}
+					{{useraddress.substring(0, 5) + "*****" + useraddress.substr(36, 5)}}
 				</view>
 			</view>
 		</view>
@@ -24,7 +24,7 @@
 			<view class="iden fl-center">
 				<image src="../../static/my/ident.png" mode=""></image>
 				<view class="identity_text">
-					身份：<span style="font-weight: 600;font-size: 32rpx;color: #AF55FF;">无身份</span>
+					身份：<span style="font-weight: 600;font-size: 32rpx;color: #AF55FF;">{{userinfo.agent_name}}</span>
 				</view>
 			</view>
 		</view>
@@ -47,9 +47,9 @@
 
 		<view class="invite">
 			<view class="invite_title">
-				我的订单
+				我的邀请码
 			</view>
-			<view class="invite_code">
+			<view class="invite_code" @click="copy">
 				<view class="">
 					{{useraddress}}
 				</view>
@@ -102,20 +102,46 @@
 		data() {
 			return {
 				useraddress: "",
+				userinfo: [],
+				shareUrl: "",
 			};
 		},
 		mounted() {
-			this.info()
+			this.init()
+			this.useraddress = uni.getStorageSync("account") || "";
 		},
 		methods: {
+			init() {
+				this.$http('api/user/info').then(res => {
+					uni.setStorageSync('userinfo', res.userinfo)
+					this.userinfo = res.userinfo;
+					this.shareUrl = res.share_url
+				})
+
+			},
 			toPage(url) {
 				uni.navigateTo({
 					url: url
 				})
 			},
-			info() {
-				this.useraddress = uni.getStorageSync("account") || "";
-			}
+			copy() {
+				var that = this
+				uni.setClipboardData({
+					data: this.shareUrl + "?invite_code=" + uni.getStorageSync("account"),
+					// data: uni.getStorageSync("account"),
+					success: function() {
+						uni.hideToast()
+						uni.getClipboardData({
+							success: function(res) {
+								uni.showToast({
+									title: "复制成功",
+									icon: 'none'
+								})
+							}
+						});
+					}
+				});
+			},
 		}
 	}
 </script>
